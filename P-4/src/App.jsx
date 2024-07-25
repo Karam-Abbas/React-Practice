@@ -26,10 +26,8 @@ function App() {
   const passRef = useRef(null);
 
   const clipboardCopy = () => {
-    windows.navigator.clipboard.writeText(password);
+    window.navigator.clipboard.writeText(password);
     passRef.current?.select(); // If option added just as a safety net
-
-    alert("Password copied to clipboard");
   };
 
   return (
