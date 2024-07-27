@@ -12,8 +12,10 @@ function App() {
   const options = Object.keys(currencyInfo);
 
   const swapValues = async () => {
-    setTo(from);
     setFrom(to);
+    setTo(from);
+    setConvertedAmount(amount);
+    setAmount(convertedAmount);
   };
 
   const convert = () => {
@@ -38,9 +40,9 @@ function App() {
               <InputBox
                 label="from"
                 amount={amount}
-                onAmountChange={(amount) => setAmount(amount)}
-                onCurrencyChange={(currency) => setFrom(currency)}
                 currencyOptions={options}
+                onCurrencyChange={(currency) => setFrom(currency)}
+                onAmountChange={(amount) => setAmount(amount)}
                 selectedCurrency={from}
               />
             </div>
@@ -50,12 +52,11 @@ function App() {
             <div className="w-full mb-1">
               <InputBox
                 label="to"
+                currencyOptions={options}
                 amount={convertedAmount}
-                amountDisabled={true}
-                onAmountChange={(amount) => setAmount(amount)}
                 onCurrencyChange={(currency) => setTo(currency)}
                 selectedCurrency={to}
-                currencyOptions={options}
+                amountDisabled={true}
               />
             </div>
             <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">Convert {from.toUpperCase()} to {to.toUpperCase()}
