@@ -8,16 +8,18 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import { Home, About , Contact ,Github} from "./components/index.js";
+import { Home, About , Contact ,Github ,User ,githubDataFetcher} from "./components/index.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/github" element={<Github />} />
-
+      <Route path="about" element={<About />} />
+      <Route path="contact" element={<Contact />} />
+      <Route loader={githubDataFetcher} path="github" element={<Github />} />
+      <Route path="user/" element={<User />} >
+      <Route path=":userId" element={<User />} />
+      </Route>
     </Route>
   )
 );

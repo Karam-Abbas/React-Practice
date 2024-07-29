@@ -7,3 +7,5 @@
 4. **useRef**: References a DOM element, like an input tag, without directly manipulating the DOM. It allows you to access and interact with the element inside and outside the component's return.
 
 5. **useId**: This hook generates unique id's and is used by FAANG companies in the production level grade so it is a good programming practice to use it in your code.
+
+6. **useLoaderData**: This hook enables you to do some pre-processing and save your time ,you first do your processing in a function and in the loader tag of the Route place that function ,then use the  hook function in the component by calling it and getting the pre-processed data from it in a way data=useLoaderData(); ,and then use it.
