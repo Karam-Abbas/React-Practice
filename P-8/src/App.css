@@ -1,0 +1,45 @@
+/* App.css */
+
+html.light {
+    --bg-color: white;
+    --text-color: black;
+  }
+  
+  html.dark {
+    --bg-color: #1a202c;
+    --text-color: #f7fafc;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .dark .dark\:bg-gray-800 {
+    background-color: #2d3748;
+  }
+  
+  .dark .dark\:border-gray-700 {
+    border-color: #4a5568;
+  }
+  
+  .dark .dark\:text-white {
+    color: #f7fafc;
+  }
+  
+  .dark .dark\:bg-blue-600 {
+    background-color: #3182ce;
+  }
+  
+  .dark .dark\:hover\:bg-blue-700:hover {
+    background-color: #2b6cb0;
+  }
+  
+  .dark .dark\:focus\:ring-blue-800:focus {
+    --tw-ring-color: #2c5282;
+  }
+  
+  .dark .dark\:text-gray-600 {
+    color: #718096;
+  }
+  
